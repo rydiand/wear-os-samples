@@ -1,7 +1,7 @@
 [versions]
 android-gradle-plugin = "9.0.1"
 compose = "1.10.3"
-guava = "33.5.0-android"
+#guava = "33.5.0-android"
 ktlint = "0.50.0"
 ktfmt = "0.54"
 androidx-wear-tiles = "1.5.0"
@@ -31,7 +31,7 @@ coil-okhttp = { module = "io.coil-kt.coil3:coil-network-okhttp", version.ref = "
 
 # Other
 desugar-jdk-libs = { module = "com.android.tools:desugar_jdk_libs", version.ref = "desugar-jdk" }
-guava = { module = "com.google.guava:guava", version.ref = "guava" }
+#guava = { module = "com.google.guava:guava", version.ref = "guava" }
 horologist-tiles = { module = "com.google.android.horologist:horologist-tiles", version.ref = "horologist" }
 kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "org-jetbrains-kotlin" }
 androidx-espresso-web = { group = "androidx.test.espresso", name = "espresso-web", version.ref = "espresso-web" }

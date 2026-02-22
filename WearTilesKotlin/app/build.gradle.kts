@@ -61,7 +61,7 @@ dependencies {
     implementation(libs.coil.okhttp)
     implementation(libs.androidx.espresso.web)
     // ... andre afhængigheder
-    implementation(libs.guava)
+    //implementation(libs.guava)
 
     // Java 8+ API desugaring
     coreLibraryDesugaring(libs.desugar.jdk.libs)
