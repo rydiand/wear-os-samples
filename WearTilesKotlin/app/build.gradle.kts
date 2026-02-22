@@ -16,12 +16,11 @@
 
 plugins {
     id("com.android.application")
-    id("org.jetbrains.kotlin.android")
     id("org.jetbrains.kotlin.plugin.compose")
 }
 
 android {
-    compileSdk = 35
+    compileSdk = 36
 
     namespace = "com.example.wear.tiles"
 
@@ -41,19 +40,14 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
         isCoreLibraryDesugaringEnabled = true
-    }
-
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17.majorVersion
-        freeCompilerArgs += "-opt-in=kotlin.RequiresOptIn"
-        freeCompilerArgs += "-opt-in=com.google.android.horologist.annotations.ExperimentalHorologistApi"
     }
 
     buildFeatures {
         compose = true
+        resValues = true
     }
 
 }
@@ -65,6 +59,9 @@ dependencies {
     // Coil for asynchronous image loading
     implementation(libs.coil)
     implementation(libs.coil.okhttp)
+    implementation(libs.androidx.espresso.web)
+    // ... andre afhængigheder
+    implementation(libs.guava)
 
     // Java 8+ API desugaring
     coreLibraryDesugaring(libs.desugar.jdk.libs)
@@ -79,7 +76,7 @@ dependencies {
     debugImplementation(libs.androidx.wear.tiles.renderer)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.wear.tooling.preview)
-    debugImplementation(libs.androidx.wear.tiles.tooling)
+    //debugImplementation(libs.androidx.wear.tiles.tooling)
     // The tile preview code is in the same file as the tiles themselves, so we need to make the
     // androidx.wear.tiles:tiles-tooling-preview dependency available to release builds, not
     // just debug builds.

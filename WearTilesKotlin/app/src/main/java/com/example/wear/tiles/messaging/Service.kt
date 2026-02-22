@@ -24,6 +24,7 @@ import coil3.ImageLoader
 import coil3.SingletonImageLoader
 import com.example.wear.tiles.R
 import com.example.wear.tiles.tools.toImageResource
+import com.google.android.horologist.annotations.ExperimentalHorologistApi
 import com.google.android.horologist.tiles.SuspendingTileService
 import java.util.UUID
 import kotlinx.coroutines.async
@@ -39,10 +40,12 @@ import kotlinx.coroutines.coroutineScope
  * The main function, [tileRequest], is triggered when the system calls for a tile. Resources are
  * provided with the [resourcesRequest] method, which is triggered when the tile uses an Image.
  */
+@OptIn(ExperimentalHorologistApi::class)
 class MessagingTileService : SuspendingTileService() {
     private lateinit var imageLoader: ImageLoader
     private lateinit var contacts: List<Contact>
 
+    @OptIn(ExperimentalHorologistApi::class)
     override fun onCreate() {
         super.onCreate()
 
